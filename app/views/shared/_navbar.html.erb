@@ -1,0 +1,33 @@
+<nav class="navbar is transparent" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/assets/navlogo.png" width="112" height="28">
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <%= link_to root_path, class: "navbar-item" do %>
+          Home
+        <%end%>
+        <a class="navbar-item" href="/products/mens">
+            Men's
+        </a>
+        <a class="navbar-item" href="">
+            Women's
+        </a>
+  
+      </div>
+        <%= link_to cart_path(@current_cart), class:"navbar-item" do %>
+          <%= fa_icon "shopping-cart" %>
+        <%end%>
+      
+      </div>
+    </div>
+  </nav>

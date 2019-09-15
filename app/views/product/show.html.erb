@@ -1,0 +1,6 @@
+<div class="show_product">
+  <img src="<%= @product.image%>" alt=""> 
+  <h1><%= @product.name%></h1>
+  <p><%=@product.description%></p>
+  <%= button_to "Add #{@product.name} to cart", line_items_path(:product_id => @product.id) %>
+</div>

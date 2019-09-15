@@ -1,0 +1,13 @@
+<div class="product-container">
+    <% @products.each do |product|  %>
+        <ul class="products">
+            <li>
+                <div class="product">
+                    <img src=<%= product.image  %> alt="">
+                    <%= link_to "View", product_path(product)%>
+                </div>
+                
+            </li>
+        </ul>
+    <% end %>
+</div>
