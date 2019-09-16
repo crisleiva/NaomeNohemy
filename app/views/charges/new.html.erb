@@ -1,0 +1,21 @@
+<%= form_for charges_path do |f| %>
+  <div>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error]%></p>
+      </div>
+    <% end %>
+    <label class="amount"><span><%= @current_cart.sub_total %></span></label>
+  </div>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key]%>"
+    
+    data-description="<% @current_cart.line_items.each do |item|%>
+    <%= item.product.name %>
+    <%end %>
+    "
+    data-amount="<%= @current_cart.sub_total%>"
+    data-locale="auto"
+  
+  ></script>
+<% end %>

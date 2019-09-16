@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :user
   resources :product
-
+  resources :charges
   resources :orders
   
 get 'carts/:id' => "carts#show", as: "cart"
