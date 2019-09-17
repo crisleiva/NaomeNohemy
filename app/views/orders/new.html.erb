@@ -1,20 +1,50 @@
-<%= form_for(@order) do |f| %>
-  <p>
+<%= form_for(@order, :html => {:class => "field"} )do |f| %>
+  <p class="control has-icons-left has-icons-right">
     <%= f.label :name %><br>
-    <%= f.text_field :name, required: true, autofocus: true %>
+    <%= f.text_field :name, placeholder: 'Full Name', class: "input", required: true, autofocus: true %>
   </p>
-  <p>
+  <p class="control has-icons-left has-icons-right">
     <%= f.label :email %><br>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, placeholder: 'Email', class: "input" do %>
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <% end %>
   </p>
-  <p>
+  <p class="control has-icons-left has-icons-right">
     <%= f.label :address %><br>
-    <%= f.text_area :address %>
+    <%= f.text_field :address, placeholder: "Address", class: "input" %>
   </p>
-  <p>
 
+  <p class="control">
+    <%= f.label :city %>
+    <%= f.text_field :city, class: "input" %>
+
+    <%= f.label :state %>
+    <%= f.select :state,  options_for_select(us_states), class: "select" %>
+  
+    <%= f.label :zip_code%>
+    <%= f.text_field :zip_code, class: "input is-small" %>
   </p>
   <p>
-    <%= button_to "Create Order", new_order_path %>
+    <%= form_for charges_path do |f| %>
+      <div>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error]%></p>
+          </div>
+        <% end %>
+        <label class="amount"><span><%= number_to_currency(@current_cart.sub_total) %></span></label>
+      </div>
+      <script src="https://checkout.stripe.com/checkout.js" 
+        class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key]%>"
+        
+        data-description="Items"
+        data-amount="<%= number_to_currency(@amount)%>"
+        data-locale="auto"
+      >
+      </script>
+    <% end %>
   </p>
 <% end %>

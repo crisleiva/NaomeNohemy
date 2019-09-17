@@ -1,10 +1,9 @@
 class ChargesController < ApplicationController
   def new
-    
+    byebug
   end
 
   def create
-    begin
       @amount = @cart.sub_total
 
       customer = Stripe::Customer.create({
@@ -15,7 +14,7 @@ class ChargesController < ApplicationController
       charge = Stripe::Charge.create({
         customer: customer.id,
         amount: @amount,
-        description: '',
+        description: 'Hats',
         currency: 'usd'
       })
       
@@ -23,8 +22,6 @@ class ChargesController < ApplicationController
       flash[:error] = e.message
       redirect_to new_charge_path
       
-    end
-    redirect_to root_path
   end
 
 

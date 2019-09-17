@@ -7,11 +7,12 @@
     <% end %>
     <label class="amount"><span><%= number_to_currency(@current_cart.sub_total) %></span></label>
   </div>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  <script src="https://checkout.stripe.com/checkout.js" 
+    class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key]%>"
     
     data-description="Items"
-    data-amount="<%= number_to_currency(@current_cart.sub_total)%>"
+    data-amount="<%= number_to_currency(@amount)%>"
     data-locale="auto"
   >
   </script>

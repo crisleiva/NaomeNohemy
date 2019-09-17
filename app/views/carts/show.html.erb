@@ -1,26 +1,38 @@
-
+<% if @cart.blank? == false %>
 <br>
 <div class="cart-container">
     <ul class="cart">
-        <% @cart.line_items.each do |line_item| %>
-          <li> Item: <img src="<%= line_item.product.image%>" alt=""> <%= line_item.product.name %><br> Price: <%= number_to_currency(line_item.product.price) %> <br> Quantity: <%= line_item.quantity %> <br> Total Price: <%= number_to_currency(line_item.total_price) %>
-        
-          <ul>
-            <li>
-              <%= link_to "Add one", line_item_add_path(:id => line_item), method: :post %>
-              <%= link_to "Reduce one", line_item_reduce_path(:id => line_item), method: :post %>
-            </li>
-            <li>
-              <%= link_to "Remove item", line_item_path(line_item), method: :delete %>
-            </li>
-          </ul>
-          
-        <% end %>
-      </ul>
-      <div class='subtotal'>
-        <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
-        <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
-        <%= link_to "Proceed to Checkout", new_charge_path %>
-      </div>
-      
+      <% @cart.line_items.each do |line_item| %>
+        <li id="item-description" >
+          <img src="<%= line_item.product.image%>" alt=""> <br>
+          Name:  <%= line_item.product.name %><br> 
+          Price: <%= number_to_currency(line_item.product.price) %> <br> 
+          Quantity: <%= line_item.quantity %> <br> 
+          Total Price: <%= number_to_currency(line_item.total_price) %> 
+          <div id="item-logic">
+            <%= link_to line_item_reduce_path(:id => line_item), method: :post do %>
+              <%= fa_icon "minus" %>
+            <% end %>
+            |
+            <%= link_to line_item_add_path(:id => line_item), method: :post do %>
+              <%= fa_icon "plus" %>
+            <%end%>
+            <%= link_to line_item_path(line_item), method: :delete do %>
+              <%= fa_icon "trash" %>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class='subtotal'>
+      <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
+      <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+      <%= link_to "Proceed to Checkout", new_order_path %>
+    </div>
 </div>
+<% elsif @cart.blank? == true%>
+  <div>
+    Your Cart is Empty!
+  </div>
+<% end %>

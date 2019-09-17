@@ -4,19 +4,50 @@
 
 
 
-.cart-container {
+div .cart-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-div .cart {
+.cart {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 20px;
-
+  border: 1px solid red;
+  flex: 3;
+  li {
+    border: 1px solid red;
+    flex: 0.5 0 22%;
+  }
+  #item-description {
+    display: flex;
+    flex: 1;
+    padding: 15px;
+    img {
+      height: 100px;
+      width: 20%;
+    }
+  }
+  
+  #item-logic {
+    display: flex;
+    padding: 5px;
+    flex: 1;
+    justify-content: space-evenly;
+    li {
+      padding: 5px;
+      margin: 5px;
+    }
+  }
 }
 
+
 div .subtotal {
-  flex: 2;
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  border: 1px solid blue;
 }
