@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_163236) do
     t.datetime "updated_at", null: false
     t.string "city"
     t.string "state"
-    t.integer "zip_code"
+    t.string "zip_code"
   end
 
   create_table "productcategories", force: :cascade do |t|

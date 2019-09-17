@@ -5,3 +5,21 @@
 #order_zip_code {
   width: 100px;
 }
+
+#order_city {
+  width: 150px;
+}
+
+.stripe-checkout {
+  margin: 10px;
+}
+
+#new_order {
+  margin: 10px;
+  padding: 5px;
+}
+
+.new-order {
+  display: flex;
+  flex-direction: column;
+}

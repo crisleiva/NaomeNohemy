@@ -8,13 +8,17 @@ class ApplicationController < ActionController::Base
     end
 
 
-    helper_method :current_user
+    helper_method :current_user, :current_cart
       def authorize
           redirect_to '/login' unless current_user
       end
 
       def logged_user
           !current_user.nil?
+      end
+
+      def cart_available?
+        !current_cart
       end
 
     private 

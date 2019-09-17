@@ -9,4 +9,6 @@ class Cart < ApplicationRecord
     end
     return sum
   end
+
+
 end
