@@ -5,17 +5,14 @@
         <p><%= flash[:error]%></p>
       </div>
     <% end %>
-    <label class="amount"><span><%= @current_cart.sub_total %></span></label>
+    <label class="amount"><span><%= number_to_currency(@current_cart.sub_total) %></span></label>
   </div>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key]%>"
     
-    data-description="<% @current_cart.line_items.each do |item|%>
-    <%= item.product.name %>
-    <%end %>
-    "
-    data-amount="<%= @current_cart.sub_total%>"
+    data-description="Items"
+    data-amount="<%= number_to_currency(@current_cart.sub_total)%>"
     data-locale="auto"
-  
-  ></script>
+  >
+  </script>
 <% end %>
