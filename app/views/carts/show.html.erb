@@ -3,14 +3,17 @@
 <div class="cart-container">
     <ul class="cart">
       <% @cart.line_items.each do |line_item| %>
-        <li >
+        <li>
+          
           <div id="item-image">
               <img src="<%= line_item.product.image%>" alt=""> 
           </div>
+
           <div id="item-description">
               <h5><%= line_item.product.name %> </h5>
               <span>Price: <%= number_to_currency(line_item.product.price) %></span> 
           </div>
+          
           <div id="item-logic">
             <%= link_to line_item_reduce_path(:id => line_item), method: :post do %>
               <%= fa_icon "minus" %>
@@ -23,6 +26,7 @@
               <%= fa_icon "trash" %>
             <% end %>
           </div>
+
         </li>
       <% end %>
     </ul>

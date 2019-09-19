@@ -1,6 +1,21 @@
 <div class="show_product">
-  <img src="<%= @product.image%>" alt=""> 
-  <h1><%= @product.name%></h1>
-  <p><%=@product.description%></p>
-  <%= button_to "Add #{@product.name} to cart", line_items_path(:product_id => @product.id) %>
+
+  <nav class="product-nav">
+    <%= link_to product_index_path do %>
+      <%= fa_icon "arrow-left", text: "ALL PRODUCTS" %>
+    <% end %>
+  </nav>
+  <div class="product-description">
+    <div id="photo">
+      <img src="<%= @product.image%>" alt=""> 
+    </div>
+
+    <div class="product-card">
+      <h1><%= @product.name%></h1>
+      <h3><%= number_to_currency(@product.price)%></h3>
+      <p><%=@product.description%></p>
+      <%= button_to "Add #{@product.name} to cart", line_items_path(:product_id => @product.id) %>
+    </div>
+  </div>
+  
 </div>

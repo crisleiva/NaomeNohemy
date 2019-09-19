@@ -1,7 +1,7 @@
 // Place all the styles related to the Product controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
 
 .product-container {
     overflow-x: scroll;
@@ -25,4 +25,71 @@
         }
     }
 
+} 
+// This for a single product
+
+.show_product {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 50%;
+  width: 50%;
+  position: relative;
+  background: gray;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+}
+
+.product-nav {
+  padding: 5px;
+  width: 100%;
+  background: white;
+  a {
+    font-family: 'Lato', 'sans-serif';
+    color: black;
+  }
+}
+
+.product-description {
+  display: flex;  
+  background: yellow;
+}
+
+#photo {
+  flex: 1;
+  img {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  justify-content: space-evenly;
+  background: red;
+  h1 {
+    font-size: 35px;
+  }
+
+  span & h3{
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .button_to {
+    bottom: 0;
+  }
 }
