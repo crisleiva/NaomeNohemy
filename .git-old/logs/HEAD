@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 c04e28b2d7385045c58affb262ea2078d092b338 Cristian Leiva <[crisjosleiva@gmail.com]> 1568512901 -0400	commit (initial): first commit
+c04e28b2d7385045c58affb262ea2078d092b338 283af1443a2ac05aa4c85f49a84acf47513349f2 Cristian Leiva <[crisjosleiva@gmail.com]> 1568673548 -0400	commit: added stripe to app
+283af1443a2ac05aa4c85f49a84acf47513349f2 3c8a4e1b6eaadd2559427befc7680446684b045a Cristian Leiva <[crisjosleiva@gmail.com]> 1568689800 -0400	commit: fixing some bugs in stripe
+3c8a4e1b6eaadd2559427befc7680446684b045a 65c6ea343036e5493a71f4c12fc8d4db5e97e01c Cristian Leiva <[crisjosleiva@gmail.com]> 1568745801 -0400	commit: payment method finished, continue styling
+65c6ea343036e5493a71f4c12fc8d4db5e97e01c 5859d90d7a5d22548d66d7189a984f7d74ffe1d2 Cristian Leiva <[crisjosleiva@gmail.com]> 1568762135 -0400	commit: added some more styling to the order page and checkout page
+5859d90d7a5d22548d66d7189a984f7d74ffe1d2 1709f72c90fb3698284b7539fb5dce25ff94bd14 Cristian Leiva <[crisjosleiva@gmail.com]> 1568929816 -0400	commit: styling product card
