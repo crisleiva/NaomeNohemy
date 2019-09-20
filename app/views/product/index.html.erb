@@ -2,11 +2,16 @@
     <% @products.each do |product|  %>
         <ul class="products">
             <li>
-                <div class="product">
-                    <img src=<%= product.image  %> alt="">
-                    <%= link_to "View", product_path(product)%>
+                <div class="index-product-image">
+                  <img src=<%= product.image  %> alt="">
                 </div>
-                
+                <div class="index-product-info">
+                  <h2><%= product.name%></h2>
+                  <p><%= number_to_currency(product.price)%></p>
+                </div>      
+                <div class="index-product-button">
+                  <%= link_to "View", product_path(product)%>
+                </div>         
             </li>
         </ul>
     <% end %>

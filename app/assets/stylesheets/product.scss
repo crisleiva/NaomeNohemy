@@ -1,44 +1,77 @@
 // Place all the styles related to the Product controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto:500&display=swap');
 
 .product-container {
     overflow-x: scroll;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
+    flex: 2;
     padding: 15px;
+
     .products {
+        overflow: hidden;
         justify-content: space-evenly;
         display: flex;
+        border: 1px solid black;
         flex: 1 0 26%;
         margin: 5px;
-        height: 100px;
-        .product {
-          justify-content: space-between;
-          display: flex;
-          flex-direction: column;
-            img {
-                width: 100px;
-            }
+        height: 30%;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        transition: all 0.3s;
+        &:hover {
+          box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         }
     }
 
 } 
+
+
+.index-product-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px;
+
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+  }
+}
+
+.index-product-button {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
 // This for a single product
 
 .show_product {
   padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
   overflow: hidden;
   border-radius: 10px;
-  height: 50%;
+  height: 40%;
   width: 50%;
   position: relative;
-  background: gray;
+  // background: gray;
   margin: 0 auto;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   transition: all 0.3s;
@@ -59,7 +92,8 @@
 
 .product-description {
   display: flex;  
-  background: yellow;
+  justify-content: space-between;
+  // background: yellow;
 }
 
 #photo {
@@ -73,23 +107,34 @@
 
 .product-card {
   display: flex;
+  padding: 10px;
   flex-direction: column;
   flex: 3;
   justify-content: space-evenly;
-  background: red;
+  // background: red;
   h1 {
-    font-size: 35px;
+    font-size: 55px;
+    font-family: 'Lato', 'sans-serif';
   }
 
   span & h3{
     font-size: 35px;
+    font-family: 'Lato', 'sans-serif';
   }
 
   p {
     font-size: 15px;
+    font-family: 'Lato', 'sans-serif';
   }
 
   .button_to {
     bottom: 0;
   }
+}
+
+.product-forms {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

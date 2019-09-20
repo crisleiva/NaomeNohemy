@@ -3,18 +3,27 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: black;
-    color: white;
+    color: gray;
     display: flex;
-    padding: 10px;
-    h5 {
-        flex: 3;
-        font-size: 20px;
+    padding: 5px;
+    justify-content: space-between;
+
+    #copyright {
+      h5 {
+        font-size: 15px;
+      }
     }
 
-    .social-media {
+    #contact {
+      a {
+        color: gray;
+        font-size: 15px;
+      }
+    }
+    #social-media {
         display: flex;
-        flex: 1;
         justify-content: space-evenly;
+        font-size: 15px;
+        width: 100px;
     }
 }
