@@ -16,6 +16,7 @@
         justify-content: space-evenly;
         display: flex;
         border: 1px solid black;
+        border-radius: 10px;
         flex: 1 0 26%;
         margin: 5px;
         height: 30%;
@@ -27,7 +28,79 @@
     }
 
 } 
+////////////////////////////////////MEDIA QUERIES///////////////////////////////
+@media screen and (max-width: 480px) {
 
+  div .product-container {
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    overflow: scroll;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+    .products {
+      justify-content: space-evenly;
+      height: 50%;
+      display: flex;
+      li {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      // flex: 1;
+      // justify-content: center;
+      flex-direction: row;
+      .index-product-image {
+        flex: 2;
+        img {
+          height: 150px; 
+        }
+      }
+
+      .index-product-info {
+        flex: 1;
+        flex-direction: column;
+      }
+
+      .index-product-button {
+        align-self: flex-end;
+        flex: .5;
+        justify-content: flex;
+      }
+    }
+  }
+
+  
+  div .show_product {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: 80%;
+    justify-content: center;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    .product-description {
+      flex-direction: column;
+    }
+
+    .product-forms {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #photo {
+      flex: .5;
+      justify-content: center;
+      img {
+        height: 85%;
+        width: 65%;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////
 
 .index-product-info {
   display: flex;
@@ -51,12 +124,6 @@
   justify-content: center;
   padding: 5px;
 }
-
-
-
-
-
-
 
 ////////////////////////////////////////////////////////////////////////////
 // This for a single product
