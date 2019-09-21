@@ -73,3 +73,22 @@ div .subtotal {
     flex-direction: row;
   }
 }
+
+
+//////////////////////////////////MEDIA QUERY ////////////////////////////////////////////
+
+
+
+@media only screen and (max-device-width: 480px) {
+  .cart {
+    #item-image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1280px) {
+
+}
