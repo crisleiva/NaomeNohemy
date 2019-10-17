@@ -34,8 +34,8 @@
     <div class="subtotal">
       <h3>SUBTOTAL: <%= number_to_currency(@cart.sub_total) %></h3>
       <div class="subtotal-buttons">
-          <%= button_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
-          <%= button_to "Checkout", new_order_path %>
+          <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+          <%= link_to "Checkout", new_order_path %>
       </div>
     </div>
 </div>

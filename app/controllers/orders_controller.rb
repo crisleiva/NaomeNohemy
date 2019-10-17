@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  
   def index
     @orders = Order.all
   end
@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+
     @order = Order.new(order_params)
     charge_error = nil
     @amount = (@current_cart.sub_total.to_i * 100)

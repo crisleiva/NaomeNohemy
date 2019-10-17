@@ -17,8 +17,6 @@
       <p><%=@product.description%></p>
 
       <div class="product-forms">
-        <select>SIZE</select>
-        <button>HOW TO MEASURE</button>
         <%= button_to "ADD #{(@product.name).upcase} TO CART", line_items_path(:product_id => @product.id) %>
       </div>
       

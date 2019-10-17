@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_163236) do
   end
 
   create_table "line_items", force: :cascade do |t|
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.integer "product_id"
     t.integer "cart_id"
     t.integer "order_id"

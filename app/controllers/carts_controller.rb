@@ -10,8 +10,4 @@ class CartsController < ApplicationController
     redirect_to product_index_path
   end
 
-  private
-    def cart_available?
-      !@current_cart
-    end
 end
